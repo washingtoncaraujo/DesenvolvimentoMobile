@@ -1,17 +1,20 @@
 import 'dart:io';
 
-List arraySum(List nums) { 
+List arraySum(List nums) {
+  //TODO: Adicione sua resposta aqui.
   var soma = [];
   if (nums.length == 1){
-    return [nums];
-  } else {
+    return nums;
+  } else if (nums.length == 0) { 
+    return [];
+  }else {
     soma.add(nums [0]);
-    for (int i=1; i<=nums.length; i++){
-      soma.add((nums[i] + nums[i-1]));
+    for (int i=1; i<nums.length; i++){
+      soma.add((soma[i-1] + nums[i]));
     }
   }
   nums = soma;
-  return [nums]; // Altere o retorno.
+  return nums; // Altere o retorno.
 }
 
 // NÃO ALTERE O CÓDIGO DAQUI PARA BAIXO
