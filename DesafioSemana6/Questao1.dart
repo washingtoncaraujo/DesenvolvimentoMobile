@@ -1,7 +1,7 @@
 import 'dart:io';
 
 List arraySum(List nums) {
-  //TODO: Adicione sua resposta aqui.
+  
   var soma = [];
   if (nums.length == 1){
     return nums;
