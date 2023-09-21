@@ -1,6 +1,27 @@
 import 'dart:io';
 
 bool canConstruct(String bilhete, String oraculo) {
+  Map<String, int> valor = {};
+  for (int i = 0; i < oraculo.length; i++) {
+    String letra = oraculo[i];
+    if (letra != " ") { 
+      valor[letra] = (valor[letra] ?? 0) + 1;
+    }
+  }  
+  for (int i = 0; i < bilhete.length; i++) {
+    String letra = bilhete[i];
+   if (letra != " ") { 
+      if (!valor.containsKey(letra) || valor[letra] == 0) {
+        return false;
+      }
+      valor[letra] = valor[letra]! - 1;
+    }
+          
+  }
+return true; // Altere o retorno.  
+}
+/* Versão 1:
+bool canConstruct(String bilhete, String oraculo) {
   var ref = oraculo.split('');
   var bilhe = bilhete.split('');
   int tref = ref.length;
@@ -21,6 +42,13 @@ bool canConstruct(String bilhete, String oraculo) {
           print(bilhe);
           
         }
+ }   
+    }
+    if (bilhe.length == 0){
+      return true;
+    }
+  }
+*/
        /*if (bilhe.length == 1) j = bilhe.length-1;
        if (bilhe[j] == ref[i]) {
          ref.removeAt(i);
@@ -37,14 +65,8 @@ bool canConstruct(String bilhete, String oraculo) {
           print(j);
           if(bilhe.length == 0) return true;
         }*/
-      }   
-    }
-    if (bilhe.length == 0){
-      return true;
-    }
-  }
-  return false; // Altere o retorno.  
-}
+     
+  
 
 // NÃO ALTERE O CÓDIGO DAQUI PARA BAIXO
 void main() {
