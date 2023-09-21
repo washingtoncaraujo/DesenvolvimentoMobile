@@ -76,3 +76,26 @@ void main() {
   print(canConstruct(strings[0], strings[1]));
 }
 
+/*
+Bilhete do Oráculo
+Digite duas strings compostas somente por letras. A primeira string é a "bilhete" e a segunda é a "oráculo". Elas devem ser separadas por '*'. Por exemplo: a * b.
+
+Dadas duas strings bilhete e oráculo, retorne true se bilhete puder ser construído usando as letras de oráculo e false caso contrário.
+
+Cada letra do oráculo só pode ser usada uma vez no bilhete.
+
+Exemplo 1:
+Entrada: a * b
+
+Saída: false
+
+Exemplo 2:
+Entrada: aa * ab
+
+Saída: false
+
+Exemplo 3:
+Entrada: aa * aab
+
+Saída: true
+*/

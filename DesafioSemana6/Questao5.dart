@@ -68,3 +68,30 @@ class LinkedList<T> {
   }
 
 }
+
+/*
+Meio da Lista Encadeada
+Digite uma lista de números inteiros positivos representando uma lista encadeada (linkedList)
+
+Dado o início de uma lista encadeada, retorne o nó do meio da lista.
+
+Se houver dois nós intermediários, retorne o segundo nó intermediário.
+
+Exemplo 1:
+Entrada: 1, 2, 3, 4, 5
+
+Saída: 3
+
+4
+
+5
+
+Exemplo 2:
+Entrada: 1,2,3,4,5,6
+
+Saída: 4
+
+5
+
+6
+*/
