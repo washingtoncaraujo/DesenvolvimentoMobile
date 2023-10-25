@@ -27,6 +27,20 @@ class Teclado extends StatelessWidget {
             Botao.operacao(texto: '*', callback: callback),
           ]),
           const SizedBox(height: 2),
+          LinhaBotoes([
+            Botao(texto: '7', callback: callback),
+            Botao(texto: '8', callback: callback),
+            Botao(texto: '9', callback: callback),
+            Botao.operacao(texto: '*', callback: callback),
+          ]),
+          const SizedBox(height: 2),
+          LinhaBotoes([
+            Botao(texto: '7', callback: callback),
+            Botao(texto: '8', callback: callback),
+            Botao(texto: '9', callback: callback),
+            Botao.operacao(texto: '*', callback: callback),
+          ]),
+          const SizedBox(height: 2),
 
 
           // Aqui vamos adicionar as listas de botões
