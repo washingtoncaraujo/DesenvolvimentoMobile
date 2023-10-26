@@ -43,7 +43,7 @@ class Teclado extends StatelessWidget {
           const SizedBox(height: 2),
 
 
-          // Aqui vamos adicionar as listas de botões
+          // Aqui vamos adicionar as listas de linhas que contém os botões
         ],
       ),
     );

@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../componentes/visor.dart';
 import '../componentes/teclado.dart';
+
+// Criando a classe principal
 class Calculadora extends StatelessWidget {
   const Calculadora({super.key});
 
@@ -23,6 +25,6 @@ class Calculadora extends StatelessWidget {
                 const SizedBox(height: 2),
                 Teclado(_pressionado),
       ],
-    ),),);
+      ),),);
   }
 }
