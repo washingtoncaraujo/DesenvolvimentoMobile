@@ -15,32 +15,40 @@ class Teclado extends StatelessWidget {
         children: <Widget>[
           const SizedBox(height: 2),
           LinhaBotoes([
-            Botao.operacao(texto: 'C', duplo: true, callback: callback),
-            Botao.operacao(texto: '%', callback: callback),
+            Botao.operacao(texto: 'C', duplo: false, callback: callback),
+            Botao.operacao(texto: '^', duplo: false, callback: callback),
+            Botao.operacao(texto: '!', callback: callback),
             Botao.operacao(texto: '/', callback: callback),
           ]),
-          const SizedBox(height: 2),
+          const SizedBox(height: 16),
           LinhaBotoes([
             Botao(texto: '7', callback: callback),
             Botao(texto: '8', callback: callback),
             Botao(texto: '9', callback: callback),
             Botao.operacao(texto: '*', callback: callback),
           ]),
-          const SizedBox(height: 2),
+          const SizedBox(height: 16),
           LinhaBotoes([
             Botao(texto: '4', callback: callback),
             Botao(texto: '5', callback: callback),
             Botao(texto: '6', callback: callback),
-            Botao.operacao(texto: '+', callback: callback),
+            Botao.operacao(texto: '-', callback: callback),
           ]),
-          const SizedBox(height: 2),
+          const SizedBox(height: 16),
           LinhaBotoes([
             Botao(texto: '1', callback: callback),
             Botao(texto: '2', callback: callback),
             Botao(texto: '3', callback: callback),
-            Botao.operacao(texto: '-', callback: callback),
+            Botao.operacao(texto: '+', callback: callback),
           ]),
-          const SizedBox(height: 2),
+          const SizedBox(height: 16),
+          LinhaBotoes([
+            Botao(texto: '0', callback: callback),
+            Botao(texto: '00', callback: callback),
+            Botao(texto: '.', callback: callback),
+            Botao.operacao(texto: '=', callback: callback),
+          ]),
+          const SizedBox(height: 16),
 
 
           // Aqui vamos adicionar as listas de linhas que contém os botões

@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart' ;
 import 'package:flutter/material.dart' ;
 
 class Botao extends StatelessWidget {
-  static const corPadrao = Color.fromRGBO(112, 112, 112, 1);
-  static const corOperacao = Color.fromRGBO(156, 220, 254,
-      1);
+  static const corPadrao = Color.fromARGB(255, 248, 243, 243);
+  static const corOperacao = Color.fromRGBO(3, 3, 3, 1);
   final String texto;
   final bool duplo;
+  final Color txtcor;
   final Color cor;
   final void Function(String) callback;
 
@@ -14,6 +14,7 @@ class Botao extends StatelessWidget {
     super.key,
     required this.texto,
     this.duplo = false,
+    this.txtcor = const Color.fromARGB(255, 15, 15, 15),
     this.cor = corPadrao,
     required this.callback,
   });
@@ -22,6 +23,7 @@ class Botao extends StatelessWidget {
     super.key,
     required this.texto,
     this.duplo = false,
+    this.txtcor = const Color.fromRGBO(245, 240, 240, 1),
     this.cor = corOperacao,
     required this.callback,
   });
@@ -31,13 +33,15 @@ class Botao extends StatelessWidget {
     return Expanded(
         flex: duplo ? 2 : 1,
         child: CupertinoButton(
+            borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+            alignment: Alignment.bottomCenter,
             color: cor,
             onPressed: () => callback(texto),
             child: Text(
               texto,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 32,
+              style: TextStyle(
+                color: txtcor,
+                fontSize: 25,
                 fontWeight: FontWeight.w100,
               ),
             )));
