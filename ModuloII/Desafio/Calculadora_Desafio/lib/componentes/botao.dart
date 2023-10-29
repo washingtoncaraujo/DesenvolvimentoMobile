@@ -30,22 +30,22 @@ class Botao extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-          width: 100,
-          height: 100,
-          alignment: AlignmentDirectional.center,
+    return Expanded(
+      flex: 1,
         child: CupertinoButton(
-           borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-           alignment: Alignment.center,
-           color: cor,
-           onPressed: () => callback(texto),
-           child: Text(
-             texto,
-             style: TextStyle(
-               color: txtcor,
-               fontSize: 25,
-               fontWeight: FontWeight.w500,
-             ),
-           )));
+        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+        alignment: Alignment.center,
+        color: cor,
+        onPressed: () => callback(texto),
+          child: Text(
+            textAlign: TextAlign.justify,
+            texto,
+            style: TextStyle(
+              color: txtcor,
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+        )));
   }
 }
+

@@ -15,7 +15,7 @@ class LinhaBotoes extends StatelessWidget {
             lista.isEmpty
                 ? lista.add(elemento)
                 : lista.addAll(
-                [const SizedBox(width: 2), elemento]
+                [const SizedBox(height: 5, width: 10,), elemento]
             );
             return lista;
           }),
