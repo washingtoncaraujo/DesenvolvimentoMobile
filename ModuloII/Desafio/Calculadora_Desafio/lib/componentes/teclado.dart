@@ -9,7 +9,8 @@ class Teclado extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      color: Color.fromARGB(73, 143, 143, 141),
       height: 500,
       child: Column(
         children: <Widget>[
