@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart' ;
-import 'package:flutter/material.dart' ;
 
 class Botao extends StatelessWidget {
   static const corPadrao = Color.fromARGB(255, 248, 243, 243);

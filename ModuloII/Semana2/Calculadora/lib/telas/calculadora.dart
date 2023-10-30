@@ -2,17 +2,28 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../componentes/visor.dart';
 import '../componentes/teclado.dart';
+import '../modelos/memoria.dart';
 
 // Criando a classe principal
-class Calculadora extends StatelessWidget {
+class Calculadora extends StatefulWidget {
   const Calculadora({super.key});
 
-  _pressionado(String texto) {
+  @override
+ State<Calculadora> createState() => _CalculadoraState();
+}
+
+class _CalculadoraState extends State<Calculadora> {
+ final Memoria memoria = Memoria();
+
+  _pressionado(String comando) {
     if (kDebugMode) {
       // Mostrar tecla clicada no terminal
-      print(texto);
+      print(comando);
     }
-  }
+  setState(() {
+  memoria.tratarDigito(comando);
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +32,7 @@ class Calculadora extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
               children: <Widget>[
-                const Visor('12345.789'),
+                Visor(memoria.valorNoVisor),
                 const SizedBox(height: 2),
                 Teclado(_pressionado),
       ],
