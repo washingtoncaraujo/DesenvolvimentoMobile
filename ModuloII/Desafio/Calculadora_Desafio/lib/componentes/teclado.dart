@@ -14,7 +14,7 @@ class Teclado extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         color: const Color.fromARGB(220, 85, 84, 84),
         ),
-      height: 500,
+      height: 600,
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: <Widget>[

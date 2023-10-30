@@ -30,8 +30,11 @@ class _CalculadoraState extends State<Calculadora> {
   Widget build(BuildContext context) {
     return MaterialApp(      
       home: Container(
-          color: const Color.fromARGB(255, 238, 234, 231),          
-          padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: const Color.fromARGB(255, 238, 234, 231),
+        ),                    
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children: <Widget>[
             Visor(memoria.valorNoVisor),
