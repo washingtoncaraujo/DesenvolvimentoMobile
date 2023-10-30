@@ -34,12 +34,12 @@ _estaSubstituindoOperacao(String comando) {
 _setOperacao(String novaOperacao) {
   bool ehSinalDeIgual = novaOperacao == '=';
   if (_ehPrimeiroNumero) {
-  if (!ehSinalDeIgual) {
-  _ehPrimeiroNumero = false;
-  _buffer[1] = novaOperacao;
- }
- _limparVisor = true;
- } else {
+    if (!ehSinalDeIgual) {
+      _ehPrimeiroNumero = false;
+      _buffer[1] = novaOperacao;
+    }
+  _limparVisor = true;
+  } else {
     _buffer[0] = _computa();
     _buffer[1] = ehSinalDeIgual ? '' : novaOperacao;
     _buffer[2] = 0.0;
@@ -57,13 +57,13 @@ _setOperacao(String novaOperacao) {
     case '!':
       return fatorial(primeiroNumero);
     case '/':
-      return primeiroNumero / segundoNumero;
+      return divisao(primeiroNumero, segundoNumero);
     case '*':
-      return primeiroNumero * segundoNumero;
+      return multiplicacao(primeiroNumero, segundoNumero);
     case '-':
-      return primeiroNumero - segundoNumero;
+      return subtracao(primeiroNumero, segundoNumero);
     case '+':
-      return primeiroNumero + segundoNumero;
+      return adicao(primeiroNumero, segundoNumero);
     case '^':
       return exponencial(primeiroNumero, segundoNumero);
     default:
@@ -71,6 +71,7 @@ _setOperacao(String novaOperacao) {
   }
  }
 
+// Função que executa a operação de exponenciação
 double exponencial (double b, double e){
   double r = 0;
     if (e == 0){
@@ -83,10 +84,40 @@ double exponencial (double b, double e){
     }
 }
 
+// Função que executa a operação de fatorial
 double fatorial (double f){
   if (f == 0) return 1;
   return f * fatorial(f-1);
   }
+
+// Função que executa a operação de adição
+String adicao (double a, double b){
+  double r = 0;
+  r = a + b;
+  return r.toStringAsFixed(1);
+}
+
+// Função que executa a operação de subtração
+String subtracao (double a, double b){
+  double r = 0;
+  r = a - b;
+  return r.toStringAsFixed(1);
+}
+
+// Função que executa a operação de multiplicação
+String multiplicacao (double a, double b){
+  double r = 0;
+  r = a * b;
+  return r.toStringAsFixed(1);
+}
+
+// Função que executa a operação de divisão
+String divisao (double a, double b){
+  double r = 0;
+  r = a / b;
+  return r.toStringAsFixed(1);
+}
+
 
  _adicionarDigito(String digito) {
  final ehPonto = digito == '.';
