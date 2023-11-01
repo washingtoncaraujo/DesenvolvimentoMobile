@@ -1,19 +1,18 @@
 class Memoria {
-    static const operacoes = ['^','!', '/', '*', '-', '+', 
-  '='];
+  static const operacoes = ['^','!', '/', '*', '-', '+', '='];
   final _buffer = [0.0, '', 0.0];
   bool _ehPrimeiroNumero = true;
   bool _limparVisor = false;
   String _valor = '0';
   String _ultimoComando = '';
   String get valorNoVisor {
-      if (_buffer[1] == '') {
-        return _buffer.first.toString();
-      } else if (operacoes.contains(_ultimoComando )) {
-        return _buffer.sublist(0, 2).join(" ");
-      } else {
-        return _buffer.join(" ");
-      }
+    if (_buffer[1] == '') {
+      return _buffer.first.toString();
+    } else if (operacoes.contains(_ultimoComando )) {
+      return _buffer.sublist(0, 2).join(" ");
+    } else {
+      return _buffer.join(" ");
+    }
   }
 
 _estaSubstituindoOperacao(String comando) {
@@ -118,37 +117,31 @@ String divisao (double a, double b){
   return r.toStringAsFixed(1);
 }
 
-
  _adicionarDigito(String digito) {
- final ehPonto = digito == '.';
- final deveLimparValor = (_valor == '0' && !ehPonto) || _limparVisor;
- if (ehPonto && _valor.contains('.') && !deveLimparValor) {
- return;
- }
- final valorVazio = ehPonto ? '0' : '';
- final valorAtual = deveLimparValor ? valorVazio : _valor;
- _valor = valorAtual + digito;
- _limparVisor = false;
- _buffer[_ehPrimeiroNumero ? 0 : 2] = double.tryParse(_valor) ?? 0;
+  final ehPonto = digito == '.';
+  final deveLimparValor = (_valor == '0' && !ehPonto) || _limparVisor;
+  if (ehPonto && _valor.contains('.') && !deveLimparValor) {
+    return;
+  }
+  final valorVazio = ehPonto ? '0' : '';
+  final valorAtual = deveLimparValor ? valorVazio : _valor;
+  _valor = valorAtual + digito;
+  _limparVisor = false;
+  _buffer[_ehPrimeiroNumero ? 0 : 2] = double.tryParse(_valor) ?? 0;
  }
 
 void tratarDigito(String comando) {
- if (_estaSubstituindoOperacao(comando)) {
- _buffer[1] = comando;
- return;
+  if (_estaSubstituindoOperacao(comando)) {
+    _buffer[1] = comando;
+    return;
+  }
+  if (comando == 'C') {
+    _limpar();
+  } else if (operacoes.contains(comando)) {
+    _setOperacao(comando);
+  } else {
+    _adicionarDigito(comando);
+  }
+  _ultimoComando = comando;
  }
- if (comando == 'C') {
- _limpar();
- } else if (operacoes.contains(comando)) {
- _setOperacao(comando);
- } else {
- _adicionarDigito(comando);
- }
- _ultimoComando = comando;
- }
-
-
-
-
-
 }

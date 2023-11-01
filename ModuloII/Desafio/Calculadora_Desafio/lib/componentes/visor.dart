@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Visor extends StatelessWidget {
   final String texto;
   const Visor(this.texto, {super.key});
+  
   @override
   Widget build(BuildContext context) {
     return Expanded(

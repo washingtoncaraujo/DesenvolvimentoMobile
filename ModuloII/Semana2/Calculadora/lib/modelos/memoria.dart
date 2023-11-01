@@ -25,9 +25,7 @@ _estaSubstituindoOperacao(String comando) {
 
  _limpar() {
  _valor = '0';
- _buffer.setAll(0, [0.0, 
-''
-, 0.0]);
+ _buffer.setAll(0, [0.0, '', 0.0]);
  _limparVisor = false;
  _ehPrimeiroNumero = true;
  _ultimoComando = '';

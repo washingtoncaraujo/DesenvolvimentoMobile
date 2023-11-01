@@ -4,7 +4,6 @@ import 'linha_botoes.dart';
 
 class Teclado extends StatelessWidget {
   final void Function(String) callback;
-
   const Teclado(this.callback, {super.key});
 
   @override
@@ -53,9 +52,7 @@ class Teclado extends StatelessWidget {
             Botao(texto: '.', callback: callback),
             Botao.operacao(texto: '=', callback: callback),
           ]),
-          const SizedBox(height: 7),
-
-
+          const SizedBox(height: 7)
           // Aqui vamos adicionar as listas de linhas que contém os botões
         ],
       ),
