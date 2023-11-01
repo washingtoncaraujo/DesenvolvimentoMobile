@@ -3,8 +3,7 @@ import 'package:flutter/material.dart' ;
 
 class Botao extends StatelessWidget {
   static const corPadrao = Color.fromRGBO(112, 112, 112, 1);
-  static const corOperacao = Color.fromRGBO(156, 220, 254,
-      1);
+  static const corOperacao = Color.fromRGBO(156, 220, 254, 0.747);
   final String texto;
   final bool duplo;
   final Color cor;

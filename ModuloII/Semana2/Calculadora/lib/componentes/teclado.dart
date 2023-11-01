@@ -41,6 +41,12 @@ class Teclado extends StatelessWidget {
             Botao.operacao(texto: '-', callback: callback),
           ]),
           const SizedBox(height: 2),
+          LinhaBotoes([
+            Botao(texto: '0', duplo: true, callback: callback),
+            Botao(texto: '.', callback: callback),
+            Botao.operacao(texto: '=',  callback: callback),
+          ]),
+          const SizedBox(height: 2),
 
 
           // Aqui vamos adicionar as listas de linhas que contém os botões
