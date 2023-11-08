@@ -29,8 +29,8 @@ class _MeuAppState extends State<MeuApp>{
   final Comando comando = Comando();
 
   void _pressed(String novoComando){
-
-
+    _MeuAppState setState();  
+    
   }
 
 @override
