@@ -1,5 +1,10 @@
-import './views/clients_list.dart';
+import 'package:crud_app/providers/client_provider.dart';
+import 'package:crud_app/views/clients_list.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import './routers/routes.dart';
+import 'package:crud_app/views/formulaire.dart';
+
 void main() {
  runApp(const MyApp());
 }
@@ -7,14 +12,21 @@ class MyApp extends StatelessWidget {
  const MyApp({super.key});
  @override
  Widget build(BuildContext context) {
- return MaterialApp(
+ return MultiProvider(
+ providers: [
+ ChangeNotifierProvider(create: (ctx) => ClientProvider())
+ ],
+ child: MaterialApp(
  title: 'Flutter Demo',
  theme: ThemeData(
  appBarTheme: const AppBarTheme(backgroundColor: Colors.grey),
  useMaterial3: true,
  ),
- home: const ClientsList(),
+ routes: {
+ Routes.INICIAL: (_) => const ClientsList(),
+ Routes.FORMULARIO: (_) => Formulaire()
+ }),
  );
- }
+}
 }
 
