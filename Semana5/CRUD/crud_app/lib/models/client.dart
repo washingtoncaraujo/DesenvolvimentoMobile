@@ -5,10 +5,10 @@ class Client {
  final String email;
  final String avatarUrl;
  const Client({
- required this.id,
- required this.nome,
- required this.sobrenome,
- required this.email,
- required this.avatarUrl,
+    required this.id,
+    required this.nome,
+    required this.sobrenome,
+    required this.email,
+    required this.avatarUrl,
  });
 }
