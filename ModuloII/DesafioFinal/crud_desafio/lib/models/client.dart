@@ -11,4 +11,13 @@ class Client {
     required this.email,
     required this.avatarUrl,
  });
+ static Map<String, dynamic> toJson(Client cliente) {
+ return {
+    'id': cliente.id.isEmpty ? null : cliente.id,
+    'nome': cliente.nome,
+    'sobrenome': cliente.sobrenome,
+    'email': cliente.email,
+    'avatarUrl': cliente.avatarUrl
+ };
+}
 }
