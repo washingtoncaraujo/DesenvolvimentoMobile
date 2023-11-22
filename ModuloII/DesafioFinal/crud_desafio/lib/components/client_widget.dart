@@ -12,13 +12,17 @@ class ClientWidget extends StatelessWidget {
  Widget build(BuildContext context) {
     final avatar = cliente.avatarUrl.isEmpty ? const CircleAvatar(child: Icon(Icons.person)) : 
     CircleAvatar(backgroundImage: NetworkImage(cliente.avatarUrl));
-    return ListTile(
+    return Card(
+      elevation: 2,
+      color: Colors.transparent,
+      child: ListTile(      
+      textColor: const Color.fromARGB(103, 238, 238, 245),
       leading: avatar, title: Text("${cliente.nome} ${cliente.sobrenome}"), subtitle: Text(cliente.email),
       trailing: SizedBox(width: 100, child: Row(children: <Widget>[
       IconButton(onPressed: () {
          Navigator.of(context)
          .pushNamed(Routes.FORMULARIO, arguments: cliente);
-      }, icon: const Icon(Icons.edit), color: Colors.orange),
+      }, icon: const Icon(Icons.edit), color: Color.fromARGB(255, 238, 241, 50)),
       IconButton(onPressed: () {
         showDialog(
         context: context,
@@ -40,5 +44,5 @@ class ClientWidget extends StatelessWidget {
         });
       }, icon: const Icon(Icons.delete), color: Colors.red)
       ],),),
-    );
+    ));
 }}

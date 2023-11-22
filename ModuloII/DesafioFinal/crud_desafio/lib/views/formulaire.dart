@@ -33,10 +33,13 @@ class _FormulaireState extends State<Formulaire> {
     final Object? cliente = ModalRoute.of(context)!.settings.arguments;
     if (cliente != null) { _carregaDadosFormulario(cliente as Client); }
     return Scaffold(
+    backgroundColor: Color.fromARGB(103, 167, 172, 172),
     appBar: AppBar(
+      toolbarHeight: 100,
       title: const Text('Formulario de clientes'), 
       actions: <Widget>[
       IconButton(
+        iconSize: 50,
         onPressed: () {
         if (_formulario.currentState!.validate()) {
           _formulario.currentState!.save();

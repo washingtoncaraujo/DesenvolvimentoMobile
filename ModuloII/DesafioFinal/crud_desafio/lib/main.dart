@@ -18,10 +18,11 @@ class MyApp extends StatelessWidget {
       ChangeNotifierProvider(create: (ctx) => ClientProvider())
     ],
     child: MaterialApp(
-    title: 'Flutter Demo',
+    title: 'Desafio Final',
     theme: ThemeData(
-    appBarTheme: const AppBarTheme(backgroundColor: Colors.grey),
-    useMaterial3: true,
+    appBarTheme: const AppBarTheme(backgroundColor: Color.fromARGB(103, 15, 15, 199)),
+    scaffoldBackgroundColor: Color.fromARGB(121, 206, 229, 240),
+    //useMaterial3: true,
     ),
     routes: {
       Routes.INICIAL: (_) => const ClientsList(),

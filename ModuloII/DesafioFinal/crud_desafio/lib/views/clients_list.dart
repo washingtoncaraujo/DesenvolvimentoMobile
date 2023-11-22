@@ -16,6 +16,7 @@ class ClientsList extends StatelessWidget {
         title: const Text('Lista de clientes'),
         actions: <Widget>[
           IconButton(
+          iconSize: 50,
           onPressed: () {
             Navigator.of(context).pushNamed(Routes.FORMULARIO);
           },
