@@ -25,7 +25,7 @@ class ClientsList extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-      itemCount: clientes.count,
+      itemCount: clientes.contador,
       itemBuilder: (ctx, i) =>
       ClientWidget(cliente: clientes.peloIndice(i))),
 

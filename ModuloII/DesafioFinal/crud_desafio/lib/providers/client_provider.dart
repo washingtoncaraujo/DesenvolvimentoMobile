@@ -15,4 +15,12 @@ void put(Client cliente) async {
  void remove(String id) {
  _service.remover(id).then((value) => {_itens = value, notifyListeners()});
  }
+
+ int get contador {
+return _itens.length;
+}
+
+Client peloIndice(int i) {
+return _itens.values.elementAt(i);
+}
 }
