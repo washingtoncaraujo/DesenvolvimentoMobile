@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../components/client_widget.dart';
+
 import '../providers/client_provider.dart';
 import '../routers/routes.dart';
 
@@ -24,7 +25,7 @@ class ClientsList extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-      itemCount: clientes.contador,
+      itemCount: clientes.count,
       itemBuilder: (ctx, i) =>
       ClientWidget(cliente: clientes.peloIndice(i))),
 
